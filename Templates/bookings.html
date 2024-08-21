@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Book confirmation</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'myapp/style4.css' %}"/>
+
+</head>
+<body>
+
+<div class="box-form">
+	<div class="right">
+		<h2>Appointment confirmed  With Designer</h2>
+		
+		<div class="app">
+			{% block content %}
+			{% if bookings %}
+					{% for booking in bookings %}
+		<div class="data">		
+					<i class="fa fa-calendar-check-o" style="font-size:100px; color:#8ccdce"></i>
+					 <span>Dear {{booking.user.username}}, your meet Confirmed With Designer {{booking.designer_name}}</span>
+					 <span>on <b>{{ booking.date_time }}</b></span>
+					 <span>For {{ booking.service_name }}-Interior</span> 
+					 <span>At {{ booking.location }}</span>	
+					 <span><b>We meet you soon..!!</b></span>			
+		</div>
+		    		{% endfor %}
+			{% else %}
+				<p>You have no bookings.</p>
+			{% endif %}
+			{% endblock %}
+		</div>
+	</div>
+</div>
+  
+</body>
+</html>

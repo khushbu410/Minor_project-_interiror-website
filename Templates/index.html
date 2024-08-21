@@ -1,0 +1,261 @@
+{% load static %}
+<html>
+<head>
+	<title>Decora Interiores</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">	
+	<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}">
+	
+</head>
+<body>
+	
+	<!-- Header Tag -->
+	<header id="Home">
+		
+		<!--Main class-->
+		<div class="main">
+			
+		<!--Logo image-->
+			<img src="{% static 'myapp/logo.png' %}" alt="This is logo">
+
+			
+			<!-- navbar-->
+			<ul>	
+				<li><a href="#Home">Home</a></li>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#Services">Services</a></li>
+				<li><a href="#Subscribe">Contect Us</a></li>
+				<li><a href="#Gallary">Gallary</a></li>
+				<li>			
+					{% if user.is_authenticated %}
+						<a href="{% url 'meetdesigner' %}" id="user">
+							<i class='fas fa-user-alt' style='font-size:20px;color:#4a717e'></i>
+							<span style="color:#4a717e; margin-left: 5px;">Hi, {{ user.username }}</span>
+						</a>
+					{% else %}
+						<a href="{% url 'login' %}" id="user">
+							<i class='fas fa-user-alt' style='font-size:20px;color:#4a717e'></i>
+						</a>
+					{% endif %}					
+				</li>
+				{% if user.is_authenticated %}
+					<li> 
+						<a href="{% url 'logout' %}" id="logout">
+							<i class='fas fa-sign-out-alt' style='font-size:20px;'></i>
+						</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+
+		
+<!-- content -->
+		<div class="title">
+			<h2>High-Quality
+				<b>Furniture</b> 
+				Just For You</h2>
+				<button>Buy Now</button>
+		</div>
+	</header>
+	
+
+	<!-- About Section -->
+	<section class="about" id="about">
+		
+			<h2>About <b>Us</b></h2>
+			<div class="about-ig">
+				<div class="about-img">
+					<img src="{% static 'myapp/service.jpeg' %}" alt="This is services image">
+				</div>
+			
+			<div class="col-lg-8">
+				<h3 id="ti">Crefted Best Wood Collection For You</h3>
+				<span>The Perfect Seat For Drawing Room & Dinning Area.Our Upholstered Lule Chairs Offer Contempory Style.Our furniture is made from selected and best quality materials that are suitable for your dream Home.Making every piece of furniture extra special Decora is a brand synonymous with the luxury found in lush yet sophisticated interior design solutions. We are connoisseurs of enchanting and viable aesthetics that adorn your space with a regal aura. A great blend of the state-of-the-art with your dream designs.
+				</span>
+			</div>
+		</div>
+		
+	</section>
+	
+	{% if messages %}
+	<div class="alert">
+	{% for message in messages %}
+	<script>alert("{{ message }}");</script> 
+	{% endfor %}
+	</div>
+	{% endif %}
+
+	<!-- Services Section -->
+	<section class="Services" id="Services">
+		<div>
+			<h2>Our<b>Services</b></h2>
+		</div>
+		<div class="row">
+			<div class="col-lg-3 col-sm-6">
+				<div class="icon1">
+					<i class="fas fa-couch" style='font-size:100px;color:#8ccdce'></i>
+				</div>
+				<h4 class="furnitures_text">Furnitures</h4>
+				<p class="text">Is it really necessary to know the different types of sofa designs out there? If you want to make the most of your interior decor, you might want to meet our Interiors</p>
+				<div class="BuyServices">
+					<div class="buy"><a href="{% url 'book' service_name='Furnitures'%}">Buy Services</a></div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6">
+				<div class="icon1">
+					<i class="fas fa-laptop-house" style='font-size:100px;color:#8ccdce'></i>
+				</div>
+				<h3 class="furnitures_text">Office</h3>
+				<p class="text">A smartly designed office not only inspires creativity but also helps you reach your peak productivity. Whether you want it to be minimalistic or modern tought.</p>
+				<div class="BuyServices">
+					<div class="buy"><a href="{% url 'book' service_name='Office' %}">Buy Services</a></div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6">
+				<div class="icon1">
+					<i class="fas fa-chair" style='font-size:100px;color:#8ccdce'></i>
+				</div>
+				<h3 class="furnitures_text">Home</h3>
+				<p class="text">Decora Interiors brings together award-winning designers, service partners and brands, to help you take your home interiors from dream to reality.Customised,budget-friendly home designs.</p>
+				<div class="BuyServices">
+					<div class="buy"><a href="{% url 'book' service_name='Home' %}">Buy Services</a></div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6">
+				<div class="icon1">
+					<i class="fas fa-sitemap" style='font-size:100px;color:#8ccdce'></i>
+				</div>
+				<h3 class="furnitures_text">Badroom</h3>
+				<p class="text">We’ve got a wide range of affordable and stylish bedroom designs you'll love, at Livspace. Our carefully-curated bedroom designs come in a variety of styles.</p>
+				<div class="BuyServices">
+					<div class="buy"><a href="{% url 'book' service_name='Badroom' %}">Buy Services</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Enter Textbox Section -->
+	<section id="Subscribe">
+			<div class="subscribe">
+				<h2><b>Contect</b> Us</h2>
+			</div>
+ 
+				<div class="int">
+				<input type="email" placeholder="Enter Your Email Address Ex. abc@xyz.com" name="Conemail" required>
+				<button>Subscribe Here..!!</button>
+				</div>
+
+	</section>
+
+	
+
+	<!-- Image Gallary Section -->
+	<section id="Gallary">
+		<div class="gallary1">
+			<h2><b>Gallary</b></h2>
+		</div>
+		<div class="par">
+		<div class="responsive">
+			<div class="gallery">
+			  <a target="_blank" href="{% static 'myapp/img-1.png' %}">
+				<img src="{% static 'myapp/img-1.png' %}" alt="fir-1" width="300px" height="300px">
+			  </a>
+			  <div class="desc">Wooden Chairs & Dressing Table</div>
+			</div>
+		  </div>
+		  
+		  
+		  <div class="responsive">
+			<div class="gallery">
+			  <a target="_blank" href="{% static 'myapp/img-2.png' %}">
+				<img src="{% static 'myapp/img-2.png' %}" alt="fir-2" width="300px" height="300px">
+			  </a>
+			  <div class="desc">Wooden Drower Table</div>
+			</div>
+		  </div>
+		  
+		  <div class="responsive">
+			<div class="gallery">
+			  <a target="_blank" href="{% static 'myapp/img-4.png' %}">
+				<img src="{% static 'myapp/img-4.png' %}" alt="fir-3" width="300px" height="300px">
+			  </a>
+			  <div class="desc">Wooden Dinning Table</div>
+			</div>
+		  </div>
+		 <div class="clearfix"></div>
+		  
+		  <div style="padding:6px;">
+		</div>
+	</section>
+<br>
+	<!--Footer section  -->
+	<section class="footer">
+		
+		<footer class="footer-distributed">
+ 
+			<div class="footer-left">
+ 
+				<h3>Khushbu<span>vaghela</span></h3>
+ 
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Services</a>
+					·
+					<a href="#">Contect Us</a>
+					·
+					<a href="#">Gallary</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+ 
+				<p class="footer-company-name">Decora Interiores &copy; 2023</p>
+			</div>
+ 
+			<div class="footer-center">
+ 
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>21 abc Street</span> Ahmedabad, India</p>
+				</div>
+ 
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+91 555 123456</p>
+				</div>
+ 
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">contact@Decora.com</a></p>
+				</div>
+ 
+			</div>
+ 
+			<div class="footer-right">
+ 
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Decora is for online furniture selling also We provide Services for Interior Designers for your Dream Room, &amp; SEO Learner.
+				</p>
+ 
+				<div class="footer-icons">
+ 
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+ 
+				</div>
+ 
+			</div>
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Book Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'myapp/style2.css' %}"/>
+
+<script>
+
+	document.addEventListener("DOMContentLoaded", function() {
+		const phoneNumberInput = document.querySelector('input[name="PhoneNumber"]');
+	
+		phoneNumberInput.addEventListener('input', function() {
+			let inputValue = phoneNumberInput.value;
+			
+			inputValue = inputValue.replace(/\D/g, '');
+	
+			if (inputValue.length > 10) {
+				phoneNumberInput.value = inputValue.substr(0, 10);
+			}
+		});
+	});
+</script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="box-form">
+		<div class="right">
+		<h2>Meet the Designer For {{ service_name }} Interior</h2>
+		<p>Let's get started with your dream interiors in 5 easy steps, Let's get to know you better and we'll share design concepts and a quote </p>
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_span }}
+			{% if error %}<span>{{ error }}</span>{% endif %}
+		<div class="inputs">
+			<input type="datetime-local" placeholder="Date & Time" name="Date" required>
+			<input type="tel" placeholder="PhoneNumber" name="PhoneNumber"  required pattern="[0-9]{10}" required>
+			<br/>
+			<select id="DesignerName" name="DesignerName" required>
+				<option value="">--select your Designer--</option>
+				<option value="Mr.Dilip Gajjar">Mr.Dilip Gajjar</option>
+				<option value="Mr.Ankit Desai">Mr.Ankil Desai</option>
+				<option value="Ms.Vishakha Singh">Ms.Vishakha Singh</option>
+				<option value="Ms.Aditi Rao">Ms.Aditi Rao</option>
+				<option value="Mrs.Neha Kotadiya">Mrs.Neha Kotadiya</option>
+			</select>
+			<br/>
+			<select id="Location" name="Location" required>
+				<option value="">--select Location--</option>
+				<option value="Ahmedabad">Ahmedabad</option>
+				<option value="Surat">Surat</option>
+				<option value="Vadodara">Vadodara</option>
+				<option value="Gandhinagar">Gandhinagar</option>
+				<option value="Rajkot">Rajkot</option>
+			</select>
+		</div>
+			
+			<br><br>			
+			<a href="{% url 'meetdesigner' %}" id="meetdesigner">		
+				<button type="submit">Meet Designer..</button>
+			</a>
+		</form>
+	</div>
+	
+
+</div>
+<!-- partial -->
+  
+</body>
+</html>

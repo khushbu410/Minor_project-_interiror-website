@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SignUpPage</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style1.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left" style="background-image: url('{% static '../static/myapp/img/carousel-1.jpg' %}')">
+		<div class="overlay">
+            <img src="{% static 'myapp/img/logo.png' %}" alt="logo"/>
+            <span>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </span>
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>SignUp</h5>
+		<p>Already have an account? <a href="{% url 'login' %}">Log in</a> it takes less than a minute</p>
+
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			{% if error %}
+			<p>{{ error }}</p>
+			{% endif %}
+		<div class="inputs">
+			<input type="text" placeholder="First Name" name="fname" required>
+			<input type="text" placeholder="Last Name" name="lname" required>
+			<input type="email" placeholder="Email" name="email"required>
+			<input type="text" placeholder="user name" name="username" required>
+			<br>
+			<input type="password" placeholder="password" name="password1" required>
+			<input type="password" placeholder="Confirm password" name="password2" required>
+		</div>
+			
+			<br><br>
+			
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+			<!-- <p>forget password?</p> -->
+		</div>
+			
+			<br>
+			
+			<button type="submit">SignUp</button>
+			</form>
+	</div>
+	
+</div>
+<!-- partial -->
+  
+</body>
+</html>
