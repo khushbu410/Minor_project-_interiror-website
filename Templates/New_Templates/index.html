@@ -27,6 +27,16 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'myapp/css/style.css' %}" rel="stylesheet">
+    
+    <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove(); 
+            });
+        }, 3000); // Dismiss after 3 seconds
+    </script>
+    
+    
 </head>
 
 <body>
@@ -75,6 +85,7 @@
     </div>
     <!-- Topbar End -->
 
+   
 
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
@@ -143,6 +154,14 @@
         </div>
     </div>
     <!-- Under Nav End -->
+     
+    {% if messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {% for message in messages %}
+           <p> {{ message }}</p>
+        {% endfor %}
+    </div>  
+    {% endif %}
 
 
     <!-- Carousel Start -->
@@ -442,53 +461,71 @@
                     <div class="owl-carousel team-carousel position-relative p-0 py-sm-5">
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="{% static 'myapp/img/team-1.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static 'myapp/img/Architects-in-ahmedabad-5.png' %}" alt="">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="https://groundwork.in/"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
+                             <div class="d-flex flex-column bg-secondary text-center py-3">
+                                <h5 class="text-white">Brijesh & Amishi Bhatha</h5>
+                                <p class="m-0">Architects</p>
+                                <a href="{% url 'book'  %}" class="btn btn-primary mt-3 py-2 px-4">Connect with Us</a>
                             </div>
                         </div>
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="{% static 'myapp/img/team-2.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static 'myapp/img/Architects-in-ahmedabad-1.png' %}" alt="" >
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                                    
-                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="https://www.vastushilpa.org/"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
+                             <div class="d-flex flex-column bg-secondary text-center py-3">
+                                <h5 class="text-white">B.V Doshi</h5>
+                                <p class="m-0">Vasstu Consultant</p>
+                                <a href="{% url 'book'  %}" class="btn btn-primary mt-3 py-2 px-4">Connect with Us</a>
                             </div>
                         </div>
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="{% static 'myapp/img/team-3.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static 'myapp/img/Architects-in-ahmedabad-2.png' %}" alt="2">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                                    
-                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="https://thegrid-arch.com/"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
+                             <div class="d-flex flex-column bg-secondary text-center py-3">
+                                <h5 class="text-white">Snehal & Bhadri Suthar</h5>
+                                <p class="m-0">Architects</p>
+                                <a href="{% url 'book'  %}" class="btn btn-primary mt-3 py-2 px-4">Connect with Us</a>
                             </div>
                         </div>
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="{% static 'myapp/img/team-4.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static 'myapp/img/Architects-in-ahmedabad-3.png' %}" alt="3">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
                                    
-                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="https://www.mododesigns.co.in/projects/"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
-                            <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">Name Goes Here</h5>
-                                <p class="m-0">Designation</p>
+                             <div class="d-flex flex-column bg-secondary text-center py-3">
+                                <h5 class="text-white">Arpan Shah</h5>
+                                <p class="m-0">Architects</p>
+                                <a href="{% url 'book'  %}" class="btn btn-primary mt-3 py-2 px-4">Connect with Us</a>
+                            </div>
+                        </div>
+                        <div class="team d-flex flex-column text-center mx-3">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="{% static 'myapp/img/Architects-in-ahmedabad-8.png' %}" alt="3">
+                                <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                   
+                                    <a class="btn btn-outline-primary text-center px-0" style="width: 38px; height: 38px;" href="https://www.archdaily.com/965940/two-bay-house-misa-architects"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                             <div class="d-flex flex-column bg-secondary text-center py-3">
+                                <h5 class="text-white">Tarun patel & Vipul Jiyani</h5>
+                                <p class="m-0">Architects</p>
+                                <a href="{% url 'book'  %}" class="btn btn-primary mt-3 py-2 px-4">Connect with Us</a>
                             </div>
                         </div>
                     </div>
@@ -509,20 +546,20 @@
                     <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
                         <div class="d-flex flex-column">
                             <div class="d-flex align-items-center mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'myapp/img/testimonial-1.jpg' %}" style="width: 60px; height: 60px;" alt="">
+                                <img class="img-fluid rounded-circle" src="{% static 'myapp/img/testimonial-1.png' %}" style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
+                                    <h5>Mr.Dixit patel</h5>
+                                    <i>Founder IT sevices</i>
                                 </div>
                             </div>
                             <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
                         </div>
                         <div class="d-flex flex-column">
                             <div class="d-flex align-items-center mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'myapp/img/testimonial-2.jpg' %}" style="width: 60px; height: 60px;" alt="">
+                                <img class="img-fluid rounded-circle" src="{% static 'myapp/img/testimonial-2.png' %}" style="width: 60px; height: 60px;" alt="">
                                 <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
+                                    <h5>Ms.Smita patil</h5>
+                                    <i>Journalist</i>
                                 </div>
                             </div>
                             <p class="m-0">Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>

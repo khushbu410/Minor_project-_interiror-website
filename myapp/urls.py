@@ -8,14 +8,14 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('signup/', views.signup_view, name='signup'),
-    path('book//<service_name>/', views.Book_view, name='book'),
+    path('book/', views.Book_view, name='book'),
     path('meetdesigner/', views.meet_designer, name='meetdesigner'),
     path('howitworks/', views.how_it_work, name='howitworks'),
     path('service/', views.services, name='services'),
     path('singleblog/', views.singleblog, name='singleblog'),
     path('contect/', views.contect, name='contect'),
-    
+    path('vastu_check/', views.vastu_check, name='vastu_check'),  
+    # path('vastu_result/', views.vastu_check, name='vastu_result'),
 
-    
         
 ]

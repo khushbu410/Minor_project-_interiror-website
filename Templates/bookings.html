@@ -23,11 +23,11 @@
 					<i class="fa fa-calendar-check-o" style="font-size:100px; color:#8ccdce"></i>
 					 <span>Dear {{booking.user.username}}, your meet Confirmed With Designer {{booking.designer_name}}</span>
 					 <span>on <b>{{ booking.date_time }}</b></span>
-					 <span>For {{ booking.service_name }}-Interior</span> 
+					 <span>For {{ booking.service_name }}Interior Consultation</span> 
 					 <span>At {{ booking.location }}</span>	
 					 <span><b>We meet you soon..!!</b></span>			
 		</div>
-		    		{% endfor %}
+		    {% endfor %}
 			{% else %}
 				<p>You have no bookings.</p>
 			{% endif %}

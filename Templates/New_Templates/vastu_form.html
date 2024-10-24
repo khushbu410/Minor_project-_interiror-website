@@ -1,0 +1,104 @@
+{% load static %}
+<!-- <!DOCTYPE html>
+<html lang="en" >
+    <body>
+    
+        <h1>AI Vastu Calculator</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>Upload a professionally designed image of your house floor plan:</p>
+            {{ form.as_p }}
+            <button type="submit">Submit Image</button>
+        </form>
+
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vastu Calculator</title>
+    <link rel="stylesheet" href="{% static 'your_css_file.css' %}"> <!-- Link to your CSS file if needed -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .how-to-use, .calculator-form {
+            margin-bottom: 20px;
+        }
+        .file-upload {
+            margin-bottom: 10px;
+        }
+        .submit-button {
+            margin-top: 20px;
+        }
+        .compass-directions img {
+            margin: 5px;
+            width: 80px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Vastu Calculator</h1>
+        
+        <div class="how-to-use">
+            <h2>How To Use</h2>
+            <ol>
+                <li>Upload your house floor plan image. Please refer to this <a href="#">sample</a>.</li>
+                <li>Select directions applicable to your floor plan.</li>
+                <li>Click Submit.</li>
+                <li>Wait for the result.</li>
+                <li>Share your report with your friends and family.</li>
+            </ol>
+        </div>
+
+        <div class="calculator-form">
+            <h2>AI Vastu Calculator</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="file-upload">
+                    <label for="file">Choose File</label>
+                    <input type="file" id="file" name="file" required>
+                </div>
+                
+                <p>If there is no direction pointer in your floor plan, please select one of the below and we will attach it to your plan.</p>
+                
+                <div class="compass-directions">
+                    <label>
+                        <input type="radio" name="direction" value="1" required>
+                        <img src="{% static 'myapp/img/c1.jpeg' %}" alt="Compass 1">
+                    </label>
+                    <label>
+                        <input type="radio" name="direction" value="2" required>
+                        <img src="{% static 'myapp/img/c2.jpeg' %}" alt="Compass 2">
+                    </label>
+                    <label>
+                        <input type="radio" name="direction" value="3" required>
+                        <img src="{% static 'myapp/img/c3.jpeg' %}" alt="Compass 3">
+                    </label>
+                    <label>
+                        <input type="radio" name="direction" value="4" required>
+                        <img src="{% static 'myapp/img/c4.jpeg' %}" alt="Compass 4">
+                    </label>
+                </div>
+                <div class="submit-button">
+                    <button type="submit">Submit Image</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
