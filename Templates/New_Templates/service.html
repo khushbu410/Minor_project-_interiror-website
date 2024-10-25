@@ -207,13 +207,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mt-5 py-5 pr-lg-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Why Choose Us?</h6>
-                    <h1 class="mb-4 section-title">25+ Years Experience In The Interior Design Industry</h1>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Explore Our New AI Features..!!</h6>
+                    <h1 class="mb-4 section-title">Vastu Consultation Powered by AI</h1>
+                    <p class="mb-4">Get personalized vastu consultation using our AI feature embedded below In the Simple and Easy steps.</p>
                     <ul class="list-inline">
-                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>25+ Years Experience</h5></li>
-                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Best Interior Design</h5></li>
-                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Customer Satisfaction</h5></li>
+                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Enter Your Floor Plan and get Vasstu Improvement</h5></li>
+                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>In the Simple Quiz check your Home Align According Vasstu Shastra or Not <br/> &nbsp; &nbsp; &nbsp;    Do check It out..!! </h5></li>
+                        <!-- <li><h5><i class="far fa-check-square text-primary mr-3"></i>Customer Satisfaction</h5></li> -->
                     </ul>
                     <a href="" class="btn btn-primary mt-3 py-2 px-4">View More</a>
                 </div>
@@ -227,47 +227,92 @@
     </div>
     <!-- Features End -->
 
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
-                        <img class="h-100" src="{% static 'myapp/img/testimonial.jpg' %}" alt="">
-                    </div>
-                </div>
-                <div class="col-md-7 py-5 pl-md-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3 pt-5">Testimonial</h6>
-                    <h1 class="mb-4 section-title">What Our Clients Say</h1>
-                    <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
-                        <div class="d-flex flex-column">
-                            <div class="d-flex align-items-center mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'myapp/img/testimonial-1.jpg' %}" style="width: 60px; height: 60px;" alt="">
-                                <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
-                                </div>
-                            </div>
-                            <p>Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <div class="d-flex align-items-center mb-3">
-                                <img class="img-fluid rounded-circle" src="{% static 'myapp/img/testimonial-2.jpg' %}" style="width: 60px; height: 60px;" alt="">
-                                <div class="ml-3">
-                                    <h5>Client Name</h5>
-                                    <i>Profession</i>
-                                </div>
-                            </div>
-                            <p class="m-0">Tempor at diam tempor sed. Sanctus dolor ipsum ut nonumy amet clita sea. Sed eos sed dolores vero no. Ipsum elitr elitr stet dolor  lorem erat. Diam no amet sea justo vero ut. Dolor ipsum kasd ipsum dolore.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- AI feature For the vasstu Consultation -->
+    <div class="Floor-plan ">
+        <h1 class="mb-4" style="text-align: center;margin-top: 20px;">Check Your Floor Plan Get Vasstu Improvement</h1> 
+        <iframe src="http://127.0.0.1:5000/" width="100%" height="600">
+        </iframe>
     </div>
-    <!-- Testimonial End -->
 
+    <div class="Quiz">
+        <h1 class="mb-4" style="text-align: center;margin-top: 20px;">Check Your Floor Plan Get Vasstu Improvement</h1> 
+
+        <!-- New template -->
+        <div class="container">
+            <h2>Vastu Questions</h2>
+            <p>
+              Answer the questionnaire and calculate the Vastu score of your house.
+            </p>
+      
+            <div id="begin-section">
+              <button
+                class="btn btn-primary mt-3 py-2 px-4"
+                type="button"
+                onclick="showQuestionnaire()"
+                style="margin-bottom: 20px;"
+              >
+                Begin
+              </button>
+            </div>
+            <form id="questionnaire" style="display: none">
+              <div>
+                <label>1. Is the main entrance of the house facing east?</label><br />
+                <input type="radio" name="q1" value="yes" required /> Yes
+                <input type="radio" name="q1" value="no" /> No
+              </div>
+              <br />
+              <div>
+                <label>2. Is there a kitchen in the southeast corner?</label><br />
+                <input type="radio" name="q2" value="yes" required /> Yes
+                <input type="radio" name="q2" value="no" /> No
+              </div>
+              <br />
+              <div>
+                <label>3. Is the master bedroom in the southwest direction?</label
+                ><br />
+                <input type="radio" name="q3" value="yes" required /> Yes
+                <input type="radio" name="q3" value="no" /> No
+              </div>
+              <br />
+              <div>
+                <label>4. Is there any overhead water tank in the southwest?</label
+                ><br />
+                <input type="radio" name="q4" value="yes" required /> Yes
+                <input type="radio" name="q4" value="no" /> No
+              </div>
+              <br />
+              <div>
+                <label>5. Are there windows or ventilators in the north?</label><br />
+                <input type="radio" name="q5" value="yes" required /> Yes
+                <input type="radio" name="q5" value="no" /> No
+              </div>
+              <br />
+              <div>
+                <label>6. Is there a pooja room in the northeast?</label><br />
+                <input type="radio" name="q6" value="yes" required /> Yes
+                <input type="radio" name="q6" value="no" /> No
+              </div>
+              <br /><br />
+              <button class="btn btn-primary mt-3 py-2 px-4" type="button" onclick="calculateScore()" style="margin-bottom: 20px;">
+                Submit
+              </button>
+            </form>
+      
+            <div id="result" class="well" style="display: none">
+              <p>Score: <span id="score"></span>%</p>
+              <p>
+                <span class="avoid" id="suggestion"></span>
+                <a href="{% url 'vastu_info' %}">Improve vastu of your house.</a>
+              </p>
+              <p>
+                <button class="btn btn-primary mt-3 py-2 px-4" type="button" onclick="resetQuiz()">
+                  Check for another House
+                </button>
+              </p>
+            </div>
+          </div>
+    </div>
+   
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
@@ -330,7 +375,69 @@
     <script src="{% static 'myapp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
     <script src="{% static 'myapp/lib/isotope/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'myapp/lib/lightbox/js/lightbox.min.js' %}"></script>
-
+    
+    <!-- Javascript For  Qiuz-->
+    <script>
+        function showQuestionnaire() {
+          document.getElementById("begin-section").style.display = "none";
+          document.getElementById("questionnaire").style.display = "block";
+        }
+  
+        function calculateScore() {
+          let totalQuestions = 6;
+          let score = 0;
+  
+          let answers = {
+            q1: document.querySelector('input[name="q1"]:checked'),
+            q2: document.querySelector('input[name="q2"]:checked'),
+            q3: document.querySelector('input[name="q3"]:checked'),
+            q4: document.querySelector('input[name="q4"]:checked'),
+            q5: document.querySelector('input[name="q5"]:checked'),
+            q6: document.querySelector('input[name="q6"]:checked'),
+          };
+  
+          if (
+            !answers.q1 ||
+            !answers.q2 ||
+            !answers.q3 ||
+            !answers.q4 ||
+            !answers.q5 ||
+            !answers.q6
+          ) {
+            alert("Please answer all the questions.");
+            return;
+          }
+  
+          for (let key in answers) {
+            if (answers[key].value === "yes") {
+              score++;
+            }
+          }
+  
+          let percentageScore = (score / totalQuestions) * 100;
+  
+          document.getElementById("score").innerText = percentageScore.toFixed(0);
+  
+          if (percentageScore >= 70) {
+            document.getElementById("suggestion").innerText = "Auspicious!";
+          } else if (percentageScore >= 40) {
+            document.getElementById("suggestion").innerText = " Better Avoid";
+          } else {
+            document.getElementById("suggestion").innerText = "Inauspicious";
+          }
+  
+          document.getElementById("result").style.display = "block";
+          document.getElementById("questionnaire").style.display = "none";
+        }
+  
+        function resetQuiz() {
+          document.getElementById("questionnaire").reset();
+          document.getElementById("result").style.display = "none";
+          document.getElementById("questionnaire").style.display = "none";
+          document.getElementById("begin-section").style.display = "block";
+        }
+      </script>
+    <!-- Javascript For the Quiz End -->
 
     <!-- Contact Javascript File -->
     <script src="{% static 'myapp/mail/jqBootstrapValidation.min.js' %}"></script>

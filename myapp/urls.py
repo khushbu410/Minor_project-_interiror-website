@@ -14,7 +14,8 @@ urlpatterns = [
     path('service/', views.services, name='services'),
     path('singleblog/', views.singleblog, name='singleblog'),
     path('contect/', views.contect, name='contect'),
-    path('vastu_check/', views.vastu_check, name='vastu_check'),  
+    path('vastu_check/', views.vastu_check, name='vastu_check'), 
+    path('vastu-info/', views.vastu_info, name='vastu_info'), 
     # path('vastu_result/', views.vastu_check, name='vastu_result'),
 
         

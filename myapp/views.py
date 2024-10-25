@@ -77,6 +77,9 @@ def singleblog(request):
 def contect(request):
     return render(request,'../Templates/New_Templates/contact.html')
 
+def vastu_info(request):
+    return render(request, 'vastu_info.html')
+
 # def vastu_check(request):
 #     if request.method == 'POST':
 #         form = VastuCheckForm(request.POST)
